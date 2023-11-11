@@ -2,10 +2,10 @@ package org.example;
 abstract class ACar implements Car
 {
 
-    protected String registrationNumber;
-    protected String make;
-    protected String model;
-    protected int numberOfDoors;
+    private final String registrationNumber;
+    private final String make;
+    private final String model;
+    private final int numberOfDoors;
 
     public ACar(String registrationNumber, String make, String model, int numberOfDoors){
         this.registrationNumber = registrationNumber;

@@ -9,7 +9,7 @@ public class GasolineCar extends AFuelCar {
 
     @Override
     String getFuelType() {
-        return " Gasoline";
+        return "Gasoline";
     }
 
     @Override
@@ -31,7 +31,7 @@ public class GasolineCar extends AFuelCar {
     @Override
     public String toString()
     {
-        return super.toString() + "\nRegistration fee: " +getRegistrationFee() + "\nFuel type " + getFuelType();
+        return super.toString() + "\nRegistration fee: " +getRegistrationFee() + "kr \nFuel type " + getFuelType() +"\n";
     }
 
 }

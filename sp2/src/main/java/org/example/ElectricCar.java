@@ -51,7 +51,7 @@ public class ElectricCar extends ACar
     @Override
     public String toString()
     {
-        return super.toString() +"\nRegistration fee: " +getRegistrationFee() + "\nBattery Capacity: " + getBatteryCapacityKWh() +"kw/h" +
-                "\nMax Range: "+  getMaxRangeKm() +"km" + "\npower comsunmption: " + getWhPrKm() +"w/km";
+        return super.toString() +"\nRegistration fee: " +getRegistrationFee() + "kr \nBattery Capacity: " + getBatteryCapacityKWh() +"kw/h" +
+                "\nMax Range: "+  getMaxRangeKm() +"km" + "\npower comsunmption: " + getWhPrKm() +"w/km\n";
     }
 }

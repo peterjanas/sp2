@@ -1,7 +1,7 @@
 package org.example;
 
 public class DieselCar extends AFuelCar {
-    private boolean particleFilter;
+    private final boolean particleFilter;
 
     public DieselCar(int kmPrLitre, boolean particleFilter, String registrationNumber, String make, String model, int numberOfDoors) {
         super(kmPrLitre, registrationNumber, make, model, numberOfDoors);
@@ -21,7 +21,7 @@ public class DieselCar extends AFuelCar {
     @Override
     public int getRegistrationFee() {
         int registrationFee = 0;
-        if (particleFilter == false) {
+        if (!particleFilter) {
             registrationFee += 1000;
         }
 
@@ -36,12 +36,12 @@ public class DieselCar extends AFuelCar {
         } else if (getKmPrLitre() > 20) {
             registrationFee += 130 + 330;
         }
-
         return registrationFee;
     }
 
     @Override
     public String toString() {
-        return super.toString() + "\nRegistration fee: " + getRegistrationFee() + "kr \nFuel type: " + getFuelType() + "\nParticle fitler: "+ hasParticleFilter();
+        return super.toString() + "\nRegistration fee: " + getRegistrationFee() + "kr \nFuel type: " + getFuelType() +
+                "\nParticle fitler: " + hasParticleFilter();
     }
 }

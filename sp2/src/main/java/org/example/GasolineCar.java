@@ -2,8 +2,7 @@ package org.example;
 
 public class GasolineCar extends AFuelCar {
 
-
-    public GasolineCar(int kmPrLitre, String registrationNumber, String make, String model, int numberOfDoors){
+    public GasolineCar(int kmPrLitre, String registrationNumber, String make, String model, int numberOfDoors) {
         super(kmPrLitre, registrationNumber, make, model, numberOfDoors);
     }
 
@@ -28,10 +27,10 @@ public class GasolineCar extends AFuelCar {
         }
         return registrationFee;
     }
+
     @Override
-    public String toString()
-    {
-        return super.toString() + "\nRegistration fee: " +getRegistrationFee() + "kr \nFuel type " + getFuelType() +"\n";
+    public String toString() {
+        return super.toString() + "\nRegistration fee: " + getRegistrationFee() + "kr \nFuel type " + getFuelType() + "\n";
     }
 
 }

@@ -1,39 +1,35 @@
 package org.example;
-public class ElectricCar extends ACar
-{
-    private int batteryCapacity;
-    private int maxRange;
+
+public class ElectricCar extends ACar {
+    private final int batteryCapacity;
+    private final int maxRange;
 
 
-    public ElectricCar(int batteryCapacity, int maxRange, String registrationNumber, String make, String model, int numberOfDoors){
-        super(registrationNumber,make,model,numberOfDoors);
+    public ElectricCar(int batteryCapacity, int maxRange, String registrationNumber, String make, String model, int numberOfDoors) {
+        super(registrationNumber, make, model, numberOfDoors);
         this.batteryCapacity = batteryCapacity;
         this.maxRange = maxRange;
     }
 
-    int getMaxRangeKm() // returns the maximum range in kilometres
-    {
+    int getMaxRangeKm() /* returns the maximum range in kilometres*/{
         return maxRange;
     }
-    int getBatteryCapacityKWh()
-    // returns the battery capacity in kilowatt-hours
-    {
+
+    int getBatteryCapacityKWh()/* returns the battery capacity in kilowatt-hours*/ {
         return batteryCapacity;
     }
-    int getWhPrKm()
-    // returns the power consumption in watt hours per driven kilometre
-    {
-        double watthourPrKm = (double) (batteryCapacity*1000) /maxRange;
+
+    int getWhPrKm()/* returns the power consumption in watt hours per driven kilometre*/ {
+        double watthourPrKm = (double) (batteryCapacity * 1000) / maxRange;
         return (int) watthourPrKm;
     }
-
 
 
     @Override
     public int getRegistrationFee() {
         int registrationFee = 0;
-        double wattHPrL = getWhPrKm()/91.25;
-        double kmPrLitre = 100/wattHPrL;
+        double wattHPrL = getWhPrKm() / 91.25;
+        double kmPrLitre = 100 / wattHPrL;
         if (kmPrLitre <= 5) {
             registrationFee = 10470;
         } else if (kmPrLitre <= 10) {
@@ -48,10 +44,11 @@ public class ElectricCar extends ACar
 
         return registrationFee;
     }
+
     @Override
-    public String toString()
-    {
-        return super.toString() +"\nRegistration fee: " +getRegistrationFee() + "kr \nBattery Capacity: " + getBatteryCapacityKWh() +"kw/h" +
-                "\nMax Range: "+  getMaxRangeKm() +"km" + "\npower comsunmption: " + getWhPrKm() +"w/km\n";
+    public String toString() {
+        return super.toString() + "\nRegistration fee: " + getRegistrationFee() + "kr \nBattery Capacity: " +
+                getBatteryCapacityKWh() + "kw/h" + "\nMax Range: " + getMaxRangeKm() + "km" +
+                "\npower comsunmption: " + getWhPrKm() + "w/km\n";
     }
 }
